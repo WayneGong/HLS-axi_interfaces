@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="axi_interfaces.c" path="D:\HLS_prj\03_project\04_axi_array\hls\axi_interfaces.c"/>
+  </source>
+  <testbench>
+    <originFiles name="axi_interfaces_test.c" path="D:\HLS_prj\03_project\04_axi_array\hls\axi_interfaces_test.c"/>
+    <originFiles name="result.golden.dat" path="D:\HLS_prj\03_project\04_axi_array\hls\result.golden.dat"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

@@ -1,0 +1,13 @@
+<annotationInfo>
+<annotationInfo>
+<item  id="10" filename="axi_interfaces.c" linenumber="19" name="icmp_ln19" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="icmp_ln19_fu_110_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="2" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<item  id="12" filename="axi_interfaces.c" linenumber="19" name="i" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="i_fu_116_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="6" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<item  id="16" filename="axi_interfaces.c" linenumber="20" name="zext_ln20" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="zext_ln20_fu_122_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<item  id="24" filename="axi_interfaces.c" linenumber="24" name="rem" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="rem_fu_127_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<item  id="25" filename="axi_interfaces.c" linenumber="24" name="icmp_ln24" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="icmp_ln24_fu_131_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="3" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<item  id="27" filename="axi_interfaces.c" linenumber="24" name="i_2" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="i_2_fu_137_p2" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="6" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<item  id="31" filename="axi_interfaces.c" linenumber="26" name="zext_ln26" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="zext_ln26_fu_143_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<item  id="34" filename="axi_interfaces.c" linenumber="26" name="zext_ln26_1" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="zext_ln26_1_fu_148_p1" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<item  id="37" filename="axi_interfaces.c" linenumber="26" name="add_ln26" contextFuncName="axi_interfaces" moduleName="axi_interfaces" rtlName="d_o_d0" latency="0" BRAM="-1" DSP="-1" FF="-1" LUT="-1" fileDirectory="D:\HLS_prj\03_project\04_axi_array\hls"><\/item>
+<\/annotationInfo>
+</annotationInfo>

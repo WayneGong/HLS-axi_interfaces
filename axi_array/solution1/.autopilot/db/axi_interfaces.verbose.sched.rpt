@@ -1,0 +1,176 @@
+
+
+================================================================
+== Vivado HLS Report for 'axi_interfaces'
+================================================================
+* Date:           Thu Feb 20 18:35:28 2020
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        axi_array
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.438|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   74|   74|   74|   74|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                         |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- axi_interfaces_label0  |    8|    8|         1|          -|          -|     8|    no    |
+        |- For_Loop               |   64|   64|         2|          -|          -|    32|    no    |
+        +-------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 3 
+3 --> 4 
+4 --> 3 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.46>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([32 x i32]* %d_o) nounwind, !map !7"   --->   Operation 5 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([32 x i32]* %d_i) nounwind, !map !13"   --->   Operation 6 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([15 x i8]* @axi_interfaces_str) nounwind"   --->   Operation 7 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.46ns)   --->   "br label %1" [axi_interfaces.c:19]   --->   Operation 8 'br' <Predicate = true> <Delay = 0.46>
+
+State 2 <SV = 1> <Delay = 1.75>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 9 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.96ns)   --->   "%icmp_ln19 = icmp eq i4 %i_0, -8" [axi_interfaces.c:19]   --->   Operation 10 'icmp' 'icmp_ln19' <Predicate = true> <Delay = 0.96> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.07> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8) nounwind"   --->   Operation 11 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.99ns)   --->   "%i = add i4 %i_0, 1" [axi_interfaces.c:19]   --->   Operation 12 'add' 'i' <Predicate = true> <Delay = 0.99> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "br i1 %icmp_ln19, label %.preheader.preheader, label %2" [axi_interfaces.c:19]   --->   Operation 13 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([22 x i8]* @p_str) nounwind" [axi_interfaces.c:19]   --->   Operation 14 'specloopname' <Predicate = (!icmp_ln19)> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%zext_ln20 = zext i4 %i_0 to i64" [axi_interfaces.c:20]   --->   Operation 15 'zext' 'zext_ln20' <Predicate = (!icmp_ln19)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%acc_addr = getelementptr inbounds [8 x i32]* @acc, i64 0, i64 %zext_ln20" [axi_interfaces.c:20]   --->   Operation 16 'getelementptr' 'acc_addr' <Predicate = (!icmp_ln19)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (1.75ns)   --->   "store i32 0, i32* %acc_addr, align 4" [axi_interfaces.c:20]   --->   Operation 17 'store' <Predicate = (!icmp_ln19)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "br label %1" [axi_interfaces.c:19]   --->   Operation 18 'br' <Predicate = (!icmp_ln19)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.46ns)   --->   "br label %.preheader" [axi_interfaces.c:24]   --->   Operation 19 'br' <Predicate = (icmp_ln19)> <Delay = 0.46>
+
+State 3 <SV = 2> <Delay = 2.77>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%i_1 = phi i6 [ %i_2, %3 ], [ 0, %.preheader.preheader ]"   --->   Operation 20 'phi' 'i_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%rem = trunc i6 %i_1 to i3" [axi_interfaces.c:24]   --->   Operation 21 'trunc' 'rem' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (1.07ns)   --->   "%icmp_ln24 = icmp eq i6 %i_1, -32" [axi_interfaces.c:24]   --->   Operation 22 'icmp' 'icmp_ln24' <Predicate = true> <Delay = 1.07> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.07> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%empty_2 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32) nounwind"   --->   Operation 23 'speclooptripcount' 'empty_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (1.28ns)   --->   "%i_2 = add i6 1, %i_1" [axi_interfaces.c:24]   --->   Operation 24 'add' 'i_2' <Predicate = true> <Delay = 1.28> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "br i1 %icmp_ln24, label %4, label %3" [axi_interfaces.c:24]   --->   Operation 25 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%zext_ln26 = zext i3 %rem to i64" [axi_interfaces.c:26]   --->   Operation 26 'zext' 'zext_ln26' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%acc_addr_1 = getelementptr inbounds [8 x i32]* @acc, i64 0, i64 %zext_ln26" [axi_interfaces.c:26]   --->   Operation 27 'getelementptr' 'acc_addr_1' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 28 [2/2] (1.75ns)   --->   "%acc_load = load i32* %acc_addr_1, align 4" [axi_interfaces.c:26]   --->   Operation 28 'load' 'acc_load' <Predicate = (!icmp_ln24)> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%zext_ln26_1 = zext i6 %i_1 to i64" [axi_interfaces.c:26]   --->   Operation 29 'zext' 'zext_ln26_1' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%d_i_addr = getelementptr [32 x i32]* %d_i, i64 0, i64 %zext_ln26_1" [axi_interfaces.c:26]   --->   Operation 30 'getelementptr' 'd_i_addr' <Predicate = (!icmp_ln24)> <Delay = 0.00>
+ST_3 : Operation 31 [2/2] (2.77ns)   --->   "%d_i_load = load i32* %d_i_addr, align 4" [axi_interfaces.c:26]   --->   Operation 31 'load' 'd_i_load' <Predicate = (!icmp_ln24)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "ret void" [axi_interfaces.c:30]   --->   Operation 32 'ret' <Predicate = (icmp_ln24)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 7.43>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([9 x i8]* @p_str1) nounwind" [axi_interfaces.c:24]   --->   Operation 33 'specloopname' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/2] (1.75ns)   --->   "%acc_load = load i32* %acc_addr_1, align 4" [axi_interfaces.c:26]   --->   Operation 34 'load' 'acc_load' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_4 : Operation 35 [1/2] (2.77ns)   --->   "%d_i_load = load i32* %d_i_addr, align 4" [axi_interfaces.c:26]   --->   Operation 35 'load' 'd_i_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_4 : Operation 36 [1/1] (1.89ns)   --->   "%add_ln26 = add nsw i32 %acc_load, %d_i_load" [axi_interfaces.c:26]   --->   Operation 36 'add' 'add_ln26' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 37 [1/1] (1.75ns)   --->   "store i32 %add_ln26, i32* %acc_addr_1, align 4" [axi_interfaces.c:26]   --->   Operation 37 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%d_o_addr = getelementptr [32 x i32]* %d_o, i64 0, i64 %zext_ln26_1" [axi_interfaces.c:27]   --->   Operation 38 'getelementptr' 'd_o_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (2.77ns)   --->   "store i32 %add_ln26, i32* %d_o_addr, align 4" [axi_interfaces.c:27]   --->   Operation 39 'store' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 32> <RAM>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "br label %.preheader" [axi_interfaces.c:24]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0.466ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', axi_interfaces.c:19) [9]  (0.466 ns)
+
+ <State 2>: 1.75ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', axi_interfaces.c:19) [9]  (0 ns)
+	'getelementptr' operation ('acc_addr', axi_interfaces.c:20) [17]  (0 ns)
+	'store' operation ('store_ln20', axi_interfaces.c:20) of constant 0 on array 'acc' [18]  (1.75 ns)
+
+ <State 3>: 2.77ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', axi_interfaces.c:24) [23]  (0 ns)
+	'getelementptr' operation ('d_i_addr', axi_interfaces.c:26) [35]  (0 ns)
+	'load' operation ('d_i_load', axi_interfaces.c:26) on array 'd_i' [36]  (2.77 ns)
+
+ <State 4>: 7.44ns
+The critical path consists of the following:
+	'load' operation ('d_i_load', axi_interfaces.c:26) on array 'd_i' [36]  (2.77 ns)
+	'add' operation ('add_ln26', axi_interfaces.c:26) [37]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26', axi_interfaces.c:26 on array 'd_o' [40]  (2.77 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

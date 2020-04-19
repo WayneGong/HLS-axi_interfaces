@@ -1,0 +1,174 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'axi_interfaces'" level="0">
+<item name = "Date">Thu Feb 20 19:35:41 2020
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">axi_array</item>
+<item name = "Solution">solution2_axi</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-2</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 5.406, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">32, 32, 32, 32, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 768, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">4, -, 196, 180, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 43, -</column>
+<column name="Register">-, -, 801, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">1, 0, ~0, 1, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
+<column name="axi_interfaces_AXILiteS_s_axi_U">axi_interfaces_AXILiteS_s_axi, 4, 0, 196, 180, 0</column>
+</table>
+</item>
+<item name = "DSP48E"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln26_10_fu_739_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_11_fu_745_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_12_fu_751_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_13_fu_757_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_14_fu_763_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_15_fu_769_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_16_fu_775_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_17_fu_781_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_18_fu_787_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_19_fu_793_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_1_fu_685_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_20_fu_799_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_21_fu_805_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_22_fu_811_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_23_fu_817_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_2_fu_691_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_3_fu_697_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_4_fu_703_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_5_fu_709_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_6_fu_715_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_7_fu_721_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_8_fu_727_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_9_fu_733_p2">+, 0, 0, 32, 32, 32</column>
+<column name="add_ln26_fu_679_p2">+, 0, 0, 32, 32, 32</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">11, 34, 1, 34</column>
+<column name="d_i_address0">11, 33, 5, 165</column>
+<column name="d_o_address0">11, 33, 5, 165</column>
+<column name="d_o_d0">10, 26, 32, 832</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="add_ln26_10_reg_1008">32, 0, 32, 0</column>
+<column name="add_ln26_11_reg_1018">32, 0, 32, 0</column>
+<column name="add_ln26_12_reg_1028">32, 0, 32, 0</column>
+<column name="add_ln26_13_reg_1038">32, 0, 32, 0</column>
+<column name="add_ln26_14_reg_1048">32, 0, 32, 0</column>
+<column name="add_ln26_15_reg_1058">32, 0, 32, 0</column>
+<column name="add_ln26_1_reg_918">32, 0, 32, 0</column>
+<column name="add_ln26_2_reg_928">32, 0, 32, 0</column>
+<column name="add_ln26_3_reg_938">32, 0, 32, 0</column>
+<column name="add_ln26_4_reg_948">32, 0, 32, 0</column>
+<column name="add_ln26_5_reg_958">32, 0, 32, 0</column>
+<column name="add_ln26_6_reg_968">32, 0, 32, 0</column>
+<column name="add_ln26_7_reg_978">32, 0, 32, 0</column>
+<column name="add_ln26_8_reg_988">32, 0, 32, 0</column>
+<column name="add_ln26_9_reg_998">32, 0, 32, 0</column>
+<column name="add_ln26_reg_908">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">33, 0, 33, 0</column>
+<column name="d_i_load_1_reg_838">32, 0, 32, 0</column>
+<column name="d_i_load_2_reg_848">32, 0, 32, 0</column>
+<column name="d_i_load_3_reg_858">32, 0, 32, 0</column>
+<column name="d_i_load_4_reg_868">32, 0, 32, 0</column>
+<column name="d_i_load_5_reg_878">32, 0, 32, 0</column>
+<column name="d_i_load_6_reg_888">32, 0, 32, 0</column>
+<column name="d_i_load_7_reg_898">32, 0, 32, 0</column>
+<column name="d_i_load_reg_828">32, 0, 32, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_AXILiteS_AWVALID">in, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_AWREADY">out, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_AWADDR">in, 9, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_WVALID">in, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_WREADY">out, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_WDATA">in, 32, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_WSTRB">in, 4, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_ARVALID">in, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_ARREADY">out, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_ARADDR">in, 9, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_RVALID">out, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_RREADY">in, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_RDATA">out, 32, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_RRESP">out, 2, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_BVALID">out, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_BREADY">in, 1, s_axi, AXILiteS, array</column>
+<column name="s_axi_AXILiteS_BRESP">out, 2, s_axi, AXILiteS, array</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, axi_interfaces, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_hs, axi_interfaces, return value</column>
+<column name="interrupt">out, 1, ap_ctrl_hs, axi_interfaces, return value</column>
+</table>
+</item>
+</section>
+</profile>

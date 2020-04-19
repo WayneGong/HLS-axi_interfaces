@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [XFORM 203-505] Pipeline directive for loop 'For_Loop' (axi_interfaces.c:24) in function 'axi_interfaces' has been removed because the loop is unrolled completely." projectName="axi_array" solutionName="solution2_axi" date="2020-02-20T19:35:40.963+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-505] Pipeline directive for loop 'axi_interfaces_label0' (axi_interfaces.c:19) in function 'axi_interfaces' has been removed because the loop is unrolled completely." projectName="axi_array" solutionName="solution2_axi" date="2020-02-20T19:35:40.926+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

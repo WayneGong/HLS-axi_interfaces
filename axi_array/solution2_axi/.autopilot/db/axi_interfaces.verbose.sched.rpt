@@ -1,0 +1,610 @@
+
+
+================================================================
+== Vivado HLS Report for 'axi_interfaces'
+================================================================
+* Date:           Thu Feb 20 19:35:41 2020
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        axi_array
+* Solution:       solution2_axi
+* Product family: zynq
+* Target device:  xc7z020-clg400-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.406|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   32|   32|   32|   32|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 33
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.75>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%d_i_addr = getelementptr [32 x i32]* %d_i, i64 0, i64 0" [axi_interfaces.c:26]   --->   Operation 34 'getelementptr' 'd_i_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [2/2] (1.75ns)   --->   "%d_i_load = load i32* %d_i_addr, align 4" [axi_interfaces.c:26]   --->   Operation 35 'load' 'd_i_load' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 2 <SV = 1> <Delay = 3.51>
+ST_2 : Operation 36 [1/2] (1.75ns)   --->   "%d_i_load = load i32* %d_i_addr, align 4" [axi_interfaces.c:26]   --->   Operation 36 'load' 'd_i_load' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%d_o_addr = getelementptr [32 x i32]* %d_o, i64 0, i64 0" [axi_interfaces.c:27]   --->   Operation 37 'getelementptr' 'd_o_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (1.75ns)   --->   "store i32 %d_i_load, i32* %d_o_addr, align 4" [axi_interfaces.c:27]   --->   Operation 38 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%d_i_addr_1 = getelementptr [32 x i32]* %d_i, i64 0, i64 1" [axi_interfaces.c:26]   --->   Operation 39 'getelementptr' 'd_i_addr_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [2/2] (1.75ns)   --->   "%d_i_load_1 = load i32* %d_i_addr_1, align 4" [axi_interfaces.c:26]   --->   Operation 40 'load' 'd_i_load_1' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 3 <SV = 2> <Delay = 3.51>
+ST_3 : Operation 41 [1/2] (1.75ns)   --->   "%d_i_load_1 = load i32* %d_i_addr_1, align 4" [axi_interfaces.c:26]   --->   Operation 41 'load' 'd_i_load_1' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%d_o_addr_1 = getelementptr [32 x i32]* %d_o, i64 0, i64 1" [axi_interfaces.c:27]   --->   Operation 42 'getelementptr' 'd_o_addr_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (1.75ns)   --->   "store i32 %d_i_load_1, i32* %d_o_addr_1, align 4" [axi_interfaces.c:27]   --->   Operation 43 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%d_i_addr_2 = getelementptr [32 x i32]* %d_i, i64 0, i64 2" [axi_interfaces.c:26]   --->   Operation 44 'getelementptr' 'd_i_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [2/2] (1.75ns)   --->   "%d_i_load_2 = load i32* %d_i_addr_2, align 4" [axi_interfaces.c:26]   --->   Operation 45 'load' 'd_i_load_2' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 4 <SV = 3> <Delay = 3.51>
+ST_4 : Operation 46 [1/2] (1.75ns)   --->   "%d_i_load_2 = load i32* %d_i_addr_2, align 4" [axi_interfaces.c:26]   --->   Operation 46 'load' 'd_i_load_2' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_4 : Operation 47 [1/1] (0.00ns)   --->   "%d_o_addr_2 = getelementptr [32 x i32]* %d_o, i64 0, i64 2" [axi_interfaces.c:27]   --->   Operation 47 'getelementptr' 'd_o_addr_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 48 [1/1] (1.75ns)   --->   "store i32 %d_i_load_2, i32* %d_o_addr_2, align 4" [axi_interfaces.c:27]   --->   Operation 48 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%d_i_addr_3 = getelementptr [32 x i32]* %d_i, i64 0, i64 3" [axi_interfaces.c:26]   --->   Operation 49 'getelementptr' 'd_i_addr_3' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [2/2] (1.75ns)   --->   "%d_i_load_3 = load i32* %d_i_addr_3, align 4" [axi_interfaces.c:26]   --->   Operation 50 'load' 'd_i_load_3' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 5 <SV = 4> <Delay = 3.51>
+ST_5 : Operation 51 [1/2] (1.75ns)   --->   "%d_i_load_3 = load i32* %d_i_addr_3, align 4" [axi_interfaces.c:26]   --->   Operation 51 'load' 'd_i_load_3' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_5 : Operation 52 [1/1] (0.00ns)   --->   "%d_o_addr_3 = getelementptr [32 x i32]* %d_o, i64 0, i64 3" [axi_interfaces.c:27]   --->   Operation 52 'getelementptr' 'd_o_addr_3' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 53 [1/1] (1.75ns)   --->   "store i32 %d_i_load_3, i32* %d_o_addr_3, align 4" [axi_interfaces.c:27]   --->   Operation 53 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%d_i_addr_4 = getelementptr [32 x i32]* %d_i, i64 0, i64 4" [axi_interfaces.c:26]   --->   Operation 54 'getelementptr' 'd_i_addr_4' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 55 [2/2] (1.75ns)   --->   "%d_i_load_4 = load i32* %d_i_addr_4, align 4" [axi_interfaces.c:26]   --->   Operation 55 'load' 'd_i_load_4' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 6 <SV = 5> <Delay = 3.51>
+ST_6 : Operation 56 [1/2] (1.75ns)   --->   "%d_i_load_4 = load i32* %d_i_addr_4, align 4" [axi_interfaces.c:26]   --->   Operation 56 'load' 'd_i_load_4' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%d_o_addr_4 = getelementptr [32 x i32]* %d_o, i64 0, i64 4" [axi_interfaces.c:27]   --->   Operation 57 'getelementptr' 'd_o_addr_4' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (1.75ns)   --->   "store i32 %d_i_load_4, i32* %d_o_addr_4, align 4" [axi_interfaces.c:27]   --->   Operation 58 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%d_i_addr_5 = getelementptr [32 x i32]* %d_i, i64 0, i64 5" [axi_interfaces.c:26]   --->   Operation 59 'getelementptr' 'd_i_addr_5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 60 [2/2] (1.75ns)   --->   "%d_i_load_5 = load i32* %d_i_addr_5, align 4" [axi_interfaces.c:26]   --->   Operation 60 'load' 'd_i_load_5' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 7 <SV = 6> <Delay = 3.51>
+ST_7 : Operation 61 [1/2] (1.75ns)   --->   "%d_i_load_5 = load i32* %d_i_addr_5, align 4" [axi_interfaces.c:26]   --->   Operation 61 'load' 'd_i_load_5' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_7 : Operation 62 [1/1] (0.00ns)   --->   "%d_o_addr_5 = getelementptr [32 x i32]* %d_o, i64 0, i64 5" [axi_interfaces.c:27]   --->   Operation 62 'getelementptr' 'd_o_addr_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 63 [1/1] (1.75ns)   --->   "store i32 %d_i_load_5, i32* %d_o_addr_5, align 4" [axi_interfaces.c:27]   --->   Operation 63 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_7 : Operation 64 [1/1] (0.00ns)   --->   "%d_i_addr_6 = getelementptr [32 x i32]* %d_i, i64 0, i64 6" [axi_interfaces.c:26]   --->   Operation 64 'getelementptr' 'd_i_addr_6' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 65 [2/2] (1.75ns)   --->   "%d_i_load_6 = load i32* %d_i_addr_6, align 4" [axi_interfaces.c:26]   --->   Operation 65 'load' 'd_i_load_6' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 8 <SV = 7> <Delay = 3.51>
+ST_8 : Operation 66 [1/2] (1.75ns)   --->   "%d_i_load_6 = load i32* %d_i_addr_6, align 4" [axi_interfaces.c:26]   --->   Operation 66 'load' 'd_i_load_6' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_8 : Operation 67 [1/1] (0.00ns)   --->   "%d_o_addr_6 = getelementptr [32 x i32]* %d_o, i64 0, i64 6" [axi_interfaces.c:27]   --->   Operation 67 'getelementptr' 'd_o_addr_6' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 68 [1/1] (1.75ns)   --->   "store i32 %d_i_load_6, i32* %d_o_addr_6, align 4" [axi_interfaces.c:27]   --->   Operation 68 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_8 : Operation 69 [1/1] (0.00ns)   --->   "%d_i_addr_7 = getelementptr [32 x i32]* %d_i, i64 0, i64 7" [axi_interfaces.c:26]   --->   Operation 69 'getelementptr' 'd_i_addr_7' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 70 [2/2] (1.75ns)   --->   "%d_i_load_7 = load i32* %d_i_addr_7, align 4" [axi_interfaces.c:26]   --->   Operation 70 'load' 'd_i_load_7' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 9 <SV = 8> <Delay = 3.51>
+ST_9 : Operation 71 [1/2] (1.75ns)   --->   "%d_i_load_7 = load i32* %d_i_addr_7, align 4" [axi_interfaces.c:26]   --->   Operation 71 'load' 'd_i_load_7' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_9 : Operation 72 [1/1] (0.00ns)   --->   "%d_o_addr_7 = getelementptr [32 x i32]* %d_o, i64 0, i64 7" [axi_interfaces.c:27]   --->   Operation 72 'getelementptr' 'd_o_addr_7' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 73 [1/1] (1.75ns)   --->   "store i32 %d_i_load_7, i32* %d_o_addr_7, align 4" [axi_interfaces.c:27]   --->   Operation 73 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_9 : Operation 74 [1/1] (0.00ns)   --->   "%d_i_addr_8 = getelementptr [32 x i32]* %d_i, i64 0, i64 8" [axi_interfaces.c:26]   --->   Operation 74 'getelementptr' 'd_i_addr_8' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 75 [2/2] (1.75ns)   --->   "%d_i_load_8 = load i32* %d_i_addr_8, align 4" [axi_interfaces.c:26]   --->   Operation 75 'load' 'd_i_load_8' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 10 <SV = 9> <Delay = 5.40>
+ST_10 : Operation 76 [1/2] (1.75ns)   --->   "%d_i_load_8 = load i32* %d_i_addr_8, align 4" [axi_interfaces.c:26]   --->   Operation 76 'load' 'd_i_load_8' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_10 : Operation 77 [1/1] (1.89ns)   --->   "%add_ln26 = add nsw i32 %d_i_load, %d_i_load_8" [axi_interfaces.c:26]   --->   Operation 77 'add' 'add_ln26' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 78 [1/1] (0.00ns)   --->   "%d_o_addr_8 = getelementptr [32 x i32]* %d_o, i64 0, i64 8" [axi_interfaces.c:27]   --->   Operation 78 'getelementptr' 'd_o_addr_8' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 79 [1/1] (1.75ns)   --->   "store i32 %add_ln26, i32* %d_o_addr_8, align 4" [axi_interfaces.c:27]   --->   Operation 79 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_10 : Operation 80 [1/1] (0.00ns)   --->   "%d_i_addr_9 = getelementptr [32 x i32]* %d_i, i64 0, i64 9" [axi_interfaces.c:26]   --->   Operation 80 'getelementptr' 'd_i_addr_9' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 81 [2/2] (1.75ns)   --->   "%d_i_load_9 = load i32* %d_i_addr_9, align 4" [axi_interfaces.c:26]   --->   Operation 81 'load' 'd_i_load_9' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 11 <SV = 10> <Delay = 5.40>
+ST_11 : Operation 82 [1/2] (1.75ns)   --->   "%d_i_load_9 = load i32* %d_i_addr_9, align 4" [axi_interfaces.c:26]   --->   Operation 82 'load' 'd_i_load_9' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_11 : Operation 83 [1/1] (1.89ns)   --->   "%add_ln26_1 = add nsw i32 %d_i_load_1, %d_i_load_9" [axi_interfaces.c:26]   --->   Operation 83 'add' 'add_ln26_1' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 84 [1/1] (0.00ns)   --->   "%d_o_addr_9 = getelementptr [32 x i32]* %d_o, i64 0, i64 9" [axi_interfaces.c:27]   --->   Operation 84 'getelementptr' 'd_o_addr_9' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 85 [1/1] (1.75ns)   --->   "store i32 %add_ln26_1, i32* %d_o_addr_9, align 4" [axi_interfaces.c:27]   --->   Operation 85 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_11 : Operation 86 [1/1] (0.00ns)   --->   "%d_i_addr_10 = getelementptr [32 x i32]* %d_i, i64 0, i64 10" [axi_interfaces.c:26]   --->   Operation 86 'getelementptr' 'd_i_addr_10' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 87 [2/2] (1.75ns)   --->   "%d_i_load_10 = load i32* %d_i_addr_10, align 4" [axi_interfaces.c:26]   --->   Operation 87 'load' 'd_i_load_10' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 12 <SV = 11> <Delay = 5.40>
+ST_12 : Operation 88 [1/2] (1.75ns)   --->   "%d_i_load_10 = load i32* %d_i_addr_10, align 4" [axi_interfaces.c:26]   --->   Operation 88 'load' 'd_i_load_10' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_12 : Operation 89 [1/1] (1.89ns)   --->   "%add_ln26_2 = add nsw i32 %d_i_load_2, %d_i_load_10" [axi_interfaces.c:26]   --->   Operation 89 'add' 'add_ln26_2' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 90 [1/1] (0.00ns)   --->   "%d_o_addr_10 = getelementptr [32 x i32]* %d_o, i64 0, i64 10" [axi_interfaces.c:27]   --->   Operation 90 'getelementptr' 'd_o_addr_10' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 91 [1/1] (1.75ns)   --->   "store i32 %add_ln26_2, i32* %d_o_addr_10, align 4" [axi_interfaces.c:27]   --->   Operation 91 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_12 : Operation 92 [1/1] (0.00ns)   --->   "%d_i_addr_11 = getelementptr [32 x i32]* %d_i, i64 0, i64 11" [axi_interfaces.c:26]   --->   Operation 92 'getelementptr' 'd_i_addr_11' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 93 [2/2] (1.75ns)   --->   "%d_i_load_11 = load i32* %d_i_addr_11, align 4" [axi_interfaces.c:26]   --->   Operation 93 'load' 'd_i_load_11' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 13 <SV = 12> <Delay = 5.40>
+ST_13 : Operation 94 [1/2] (1.75ns)   --->   "%d_i_load_11 = load i32* %d_i_addr_11, align 4" [axi_interfaces.c:26]   --->   Operation 94 'load' 'd_i_load_11' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_13 : Operation 95 [1/1] (1.89ns)   --->   "%add_ln26_3 = add nsw i32 %d_i_load_3, %d_i_load_11" [axi_interfaces.c:26]   --->   Operation 95 'add' 'add_ln26_3' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 96 [1/1] (0.00ns)   --->   "%d_o_addr_11 = getelementptr [32 x i32]* %d_o, i64 0, i64 11" [axi_interfaces.c:27]   --->   Operation 96 'getelementptr' 'd_o_addr_11' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 97 [1/1] (1.75ns)   --->   "store i32 %add_ln26_3, i32* %d_o_addr_11, align 4" [axi_interfaces.c:27]   --->   Operation 97 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_13 : Operation 98 [1/1] (0.00ns)   --->   "%d_i_addr_12 = getelementptr [32 x i32]* %d_i, i64 0, i64 12" [axi_interfaces.c:26]   --->   Operation 98 'getelementptr' 'd_i_addr_12' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 99 [2/2] (1.75ns)   --->   "%d_i_load_12 = load i32* %d_i_addr_12, align 4" [axi_interfaces.c:26]   --->   Operation 99 'load' 'd_i_load_12' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 14 <SV = 13> <Delay = 5.40>
+ST_14 : Operation 100 [1/2] (1.75ns)   --->   "%d_i_load_12 = load i32* %d_i_addr_12, align 4" [axi_interfaces.c:26]   --->   Operation 100 'load' 'd_i_load_12' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_14 : Operation 101 [1/1] (1.89ns)   --->   "%add_ln26_4 = add nsw i32 %d_i_load_4, %d_i_load_12" [axi_interfaces.c:26]   --->   Operation 101 'add' 'add_ln26_4' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 102 [1/1] (0.00ns)   --->   "%d_o_addr_12 = getelementptr [32 x i32]* %d_o, i64 0, i64 12" [axi_interfaces.c:27]   --->   Operation 102 'getelementptr' 'd_o_addr_12' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 103 [1/1] (1.75ns)   --->   "store i32 %add_ln26_4, i32* %d_o_addr_12, align 4" [axi_interfaces.c:27]   --->   Operation 103 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_14 : Operation 104 [1/1] (0.00ns)   --->   "%d_i_addr_13 = getelementptr [32 x i32]* %d_i, i64 0, i64 13" [axi_interfaces.c:26]   --->   Operation 104 'getelementptr' 'd_i_addr_13' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 105 [2/2] (1.75ns)   --->   "%d_i_load_13 = load i32* %d_i_addr_13, align 4" [axi_interfaces.c:26]   --->   Operation 105 'load' 'd_i_load_13' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 15 <SV = 14> <Delay = 5.40>
+ST_15 : Operation 106 [1/2] (1.75ns)   --->   "%d_i_load_13 = load i32* %d_i_addr_13, align 4" [axi_interfaces.c:26]   --->   Operation 106 'load' 'd_i_load_13' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_15 : Operation 107 [1/1] (1.89ns)   --->   "%add_ln26_5 = add nsw i32 %d_i_load_5, %d_i_load_13" [axi_interfaces.c:26]   --->   Operation 107 'add' 'add_ln26_5' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 108 [1/1] (0.00ns)   --->   "%d_o_addr_13 = getelementptr [32 x i32]* %d_o, i64 0, i64 13" [axi_interfaces.c:27]   --->   Operation 108 'getelementptr' 'd_o_addr_13' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 109 [1/1] (1.75ns)   --->   "store i32 %add_ln26_5, i32* %d_o_addr_13, align 4" [axi_interfaces.c:27]   --->   Operation 109 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_15 : Operation 110 [1/1] (0.00ns)   --->   "%d_i_addr_14 = getelementptr [32 x i32]* %d_i, i64 0, i64 14" [axi_interfaces.c:26]   --->   Operation 110 'getelementptr' 'd_i_addr_14' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 111 [2/2] (1.75ns)   --->   "%d_i_load_14 = load i32* %d_i_addr_14, align 4" [axi_interfaces.c:26]   --->   Operation 111 'load' 'd_i_load_14' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 16 <SV = 15> <Delay = 5.40>
+ST_16 : Operation 112 [1/2] (1.75ns)   --->   "%d_i_load_14 = load i32* %d_i_addr_14, align 4" [axi_interfaces.c:26]   --->   Operation 112 'load' 'd_i_load_14' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_16 : Operation 113 [1/1] (1.89ns)   --->   "%add_ln26_6 = add nsw i32 %d_i_load_6, %d_i_load_14" [axi_interfaces.c:26]   --->   Operation 113 'add' 'add_ln26_6' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 114 [1/1] (0.00ns)   --->   "%d_o_addr_14 = getelementptr [32 x i32]* %d_o, i64 0, i64 14" [axi_interfaces.c:27]   --->   Operation 114 'getelementptr' 'd_o_addr_14' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 115 [1/1] (1.75ns)   --->   "store i32 %add_ln26_6, i32* %d_o_addr_14, align 4" [axi_interfaces.c:27]   --->   Operation 115 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_16 : Operation 116 [1/1] (0.00ns)   --->   "%d_i_addr_15 = getelementptr [32 x i32]* %d_i, i64 0, i64 15" [axi_interfaces.c:26]   --->   Operation 116 'getelementptr' 'd_i_addr_15' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 117 [2/2] (1.75ns)   --->   "%d_i_load_15 = load i32* %d_i_addr_15, align 4" [axi_interfaces.c:26]   --->   Operation 117 'load' 'd_i_load_15' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 17 <SV = 16> <Delay = 5.40>
+ST_17 : Operation 118 [1/2] (1.75ns)   --->   "%d_i_load_15 = load i32* %d_i_addr_15, align 4" [axi_interfaces.c:26]   --->   Operation 118 'load' 'd_i_load_15' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_17 : Operation 119 [1/1] (1.89ns)   --->   "%add_ln26_7 = add nsw i32 %d_i_load_7, %d_i_load_15" [axi_interfaces.c:26]   --->   Operation 119 'add' 'add_ln26_7' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 120 [1/1] (0.00ns)   --->   "%d_o_addr_15 = getelementptr [32 x i32]* %d_o, i64 0, i64 15" [axi_interfaces.c:27]   --->   Operation 120 'getelementptr' 'd_o_addr_15' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 121 [1/1] (1.75ns)   --->   "store i32 %add_ln26_7, i32* %d_o_addr_15, align 4" [axi_interfaces.c:27]   --->   Operation 121 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_17 : Operation 122 [1/1] (0.00ns)   --->   "%d_i_addr_16 = getelementptr [32 x i32]* %d_i, i64 0, i64 16" [axi_interfaces.c:26]   --->   Operation 122 'getelementptr' 'd_i_addr_16' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 123 [2/2] (1.75ns)   --->   "%d_i_load_16 = load i32* %d_i_addr_16, align 4" [axi_interfaces.c:26]   --->   Operation 123 'load' 'd_i_load_16' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 18 <SV = 17> <Delay = 5.40>
+ST_18 : Operation 124 [1/2] (1.75ns)   --->   "%d_i_load_16 = load i32* %d_i_addr_16, align 4" [axi_interfaces.c:26]   --->   Operation 124 'load' 'd_i_load_16' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_18 : Operation 125 [1/1] (1.89ns)   --->   "%add_ln26_8 = add nsw i32 %d_i_load_16, %add_ln26" [axi_interfaces.c:26]   --->   Operation 125 'add' 'add_ln26_8' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 126 [1/1] (0.00ns)   --->   "%d_o_addr_16 = getelementptr [32 x i32]* %d_o, i64 0, i64 16" [axi_interfaces.c:27]   --->   Operation 126 'getelementptr' 'd_o_addr_16' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 127 [1/1] (1.75ns)   --->   "store i32 %add_ln26_8, i32* %d_o_addr_16, align 4" [axi_interfaces.c:27]   --->   Operation 127 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_18 : Operation 128 [1/1] (0.00ns)   --->   "%d_i_addr_17 = getelementptr [32 x i32]* %d_i, i64 0, i64 17" [axi_interfaces.c:26]   --->   Operation 128 'getelementptr' 'd_i_addr_17' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 129 [2/2] (1.75ns)   --->   "%d_i_load_17 = load i32* %d_i_addr_17, align 4" [axi_interfaces.c:26]   --->   Operation 129 'load' 'd_i_load_17' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 19 <SV = 18> <Delay = 5.40>
+ST_19 : Operation 130 [1/2] (1.75ns)   --->   "%d_i_load_17 = load i32* %d_i_addr_17, align 4" [axi_interfaces.c:26]   --->   Operation 130 'load' 'd_i_load_17' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_19 : Operation 131 [1/1] (1.89ns)   --->   "%add_ln26_9 = add nsw i32 %d_i_load_17, %add_ln26_1" [axi_interfaces.c:26]   --->   Operation 131 'add' 'add_ln26_9' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 132 [1/1] (0.00ns)   --->   "%d_o_addr_17 = getelementptr [32 x i32]* %d_o, i64 0, i64 17" [axi_interfaces.c:27]   --->   Operation 132 'getelementptr' 'd_o_addr_17' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 133 [1/1] (1.75ns)   --->   "store i32 %add_ln26_9, i32* %d_o_addr_17, align 4" [axi_interfaces.c:27]   --->   Operation 133 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_19 : Operation 134 [1/1] (0.00ns)   --->   "%d_i_addr_18 = getelementptr [32 x i32]* %d_i, i64 0, i64 18" [axi_interfaces.c:26]   --->   Operation 134 'getelementptr' 'd_i_addr_18' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 135 [2/2] (1.75ns)   --->   "%d_i_load_18 = load i32* %d_i_addr_18, align 4" [axi_interfaces.c:26]   --->   Operation 135 'load' 'd_i_load_18' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 20 <SV = 19> <Delay = 5.40>
+ST_20 : Operation 136 [1/2] (1.75ns)   --->   "%d_i_load_18 = load i32* %d_i_addr_18, align 4" [axi_interfaces.c:26]   --->   Operation 136 'load' 'd_i_load_18' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_20 : Operation 137 [1/1] (1.89ns)   --->   "%add_ln26_10 = add nsw i32 %d_i_load_18, %add_ln26_2" [axi_interfaces.c:26]   --->   Operation 137 'add' 'add_ln26_10' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 138 [1/1] (0.00ns)   --->   "%d_o_addr_18 = getelementptr [32 x i32]* %d_o, i64 0, i64 18" [axi_interfaces.c:27]   --->   Operation 138 'getelementptr' 'd_o_addr_18' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 139 [1/1] (1.75ns)   --->   "store i32 %add_ln26_10, i32* %d_o_addr_18, align 4" [axi_interfaces.c:27]   --->   Operation 139 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_20 : Operation 140 [1/1] (0.00ns)   --->   "%d_i_addr_19 = getelementptr [32 x i32]* %d_i, i64 0, i64 19" [axi_interfaces.c:26]   --->   Operation 140 'getelementptr' 'd_i_addr_19' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 141 [2/2] (1.75ns)   --->   "%d_i_load_19 = load i32* %d_i_addr_19, align 4" [axi_interfaces.c:26]   --->   Operation 141 'load' 'd_i_load_19' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 21 <SV = 20> <Delay = 5.40>
+ST_21 : Operation 142 [1/2] (1.75ns)   --->   "%d_i_load_19 = load i32* %d_i_addr_19, align 4" [axi_interfaces.c:26]   --->   Operation 142 'load' 'd_i_load_19' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_21 : Operation 143 [1/1] (1.89ns)   --->   "%add_ln26_11 = add nsw i32 %d_i_load_19, %add_ln26_3" [axi_interfaces.c:26]   --->   Operation 143 'add' 'add_ln26_11' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 144 [1/1] (0.00ns)   --->   "%d_o_addr_19 = getelementptr [32 x i32]* %d_o, i64 0, i64 19" [axi_interfaces.c:27]   --->   Operation 144 'getelementptr' 'd_o_addr_19' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 145 [1/1] (1.75ns)   --->   "store i32 %add_ln26_11, i32* %d_o_addr_19, align 4" [axi_interfaces.c:27]   --->   Operation 145 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_21 : Operation 146 [1/1] (0.00ns)   --->   "%d_i_addr_20 = getelementptr [32 x i32]* %d_i, i64 0, i64 20" [axi_interfaces.c:26]   --->   Operation 146 'getelementptr' 'd_i_addr_20' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 147 [2/2] (1.75ns)   --->   "%d_i_load_20 = load i32* %d_i_addr_20, align 4" [axi_interfaces.c:26]   --->   Operation 147 'load' 'd_i_load_20' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 22 <SV = 21> <Delay = 5.40>
+ST_22 : Operation 148 [1/2] (1.75ns)   --->   "%d_i_load_20 = load i32* %d_i_addr_20, align 4" [axi_interfaces.c:26]   --->   Operation 148 'load' 'd_i_load_20' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_22 : Operation 149 [1/1] (1.89ns)   --->   "%add_ln26_12 = add nsw i32 %d_i_load_20, %add_ln26_4" [axi_interfaces.c:26]   --->   Operation 149 'add' 'add_ln26_12' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 150 [1/1] (0.00ns)   --->   "%d_o_addr_20 = getelementptr [32 x i32]* %d_o, i64 0, i64 20" [axi_interfaces.c:27]   --->   Operation 150 'getelementptr' 'd_o_addr_20' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 151 [1/1] (1.75ns)   --->   "store i32 %add_ln26_12, i32* %d_o_addr_20, align 4" [axi_interfaces.c:27]   --->   Operation 151 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_22 : Operation 152 [1/1] (0.00ns)   --->   "%d_i_addr_21 = getelementptr [32 x i32]* %d_i, i64 0, i64 21" [axi_interfaces.c:26]   --->   Operation 152 'getelementptr' 'd_i_addr_21' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 153 [2/2] (1.75ns)   --->   "%d_i_load_21 = load i32* %d_i_addr_21, align 4" [axi_interfaces.c:26]   --->   Operation 153 'load' 'd_i_load_21' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 23 <SV = 22> <Delay = 5.40>
+ST_23 : Operation 154 [1/2] (1.75ns)   --->   "%d_i_load_21 = load i32* %d_i_addr_21, align 4" [axi_interfaces.c:26]   --->   Operation 154 'load' 'd_i_load_21' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_23 : Operation 155 [1/1] (1.89ns)   --->   "%add_ln26_13 = add nsw i32 %d_i_load_21, %add_ln26_5" [axi_interfaces.c:26]   --->   Operation 155 'add' 'add_ln26_13' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 156 [1/1] (0.00ns)   --->   "%d_o_addr_21 = getelementptr [32 x i32]* %d_o, i64 0, i64 21" [axi_interfaces.c:27]   --->   Operation 156 'getelementptr' 'd_o_addr_21' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 157 [1/1] (1.75ns)   --->   "store i32 %add_ln26_13, i32* %d_o_addr_21, align 4" [axi_interfaces.c:27]   --->   Operation 157 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_23 : Operation 158 [1/1] (0.00ns)   --->   "%d_i_addr_22 = getelementptr [32 x i32]* %d_i, i64 0, i64 22" [axi_interfaces.c:26]   --->   Operation 158 'getelementptr' 'd_i_addr_22' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 159 [2/2] (1.75ns)   --->   "%d_i_load_22 = load i32* %d_i_addr_22, align 4" [axi_interfaces.c:26]   --->   Operation 159 'load' 'd_i_load_22' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 24 <SV = 23> <Delay = 5.40>
+ST_24 : Operation 160 [1/2] (1.75ns)   --->   "%d_i_load_22 = load i32* %d_i_addr_22, align 4" [axi_interfaces.c:26]   --->   Operation 160 'load' 'd_i_load_22' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_24 : Operation 161 [1/1] (1.89ns)   --->   "%add_ln26_14 = add nsw i32 %d_i_load_22, %add_ln26_6" [axi_interfaces.c:26]   --->   Operation 161 'add' 'add_ln26_14' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 162 [1/1] (0.00ns)   --->   "%d_o_addr_22 = getelementptr [32 x i32]* %d_o, i64 0, i64 22" [axi_interfaces.c:27]   --->   Operation 162 'getelementptr' 'd_o_addr_22' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 163 [1/1] (1.75ns)   --->   "store i32 %add_ln26_14, i32* %d_o_addr_22, align 4" [axi_interfaces.c:27]   --->   Operation 163 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_24 : Operation 164 [1/1] (0.00ns)   --->   "%d_i_addr_23 = getelementptr [32 x i32]* %d_i, i64 0, i64 23" [axi_interfaces.c:26]   --->   Operation 164 'getelementptr' 'd_i_addr_23' <Predicate = true> <Delay = 0.00>
+ST_24 : Operation 165 [2/2] (1.75ns)   --->   "%d_i_load_23 = load i32* %d_i_addr_23, align 4" [axi_interfaces.c:26]   --->   Operation 165 'load' 'd_i_load_23' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 25 <SV = 24> <Delay = 5.40>
+ST_25 : Operation 166 [1/2] (1.75ns)   --->   "%d_i_load_23 = load i32* %d_i_addr_23, align 4" [axi_interfaces.c:26]   --->   Operation 166 'load' 'd_i_load_23' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_25 : Operation 167 [1/1] (1.89ns)   --->   "%add_ln26_15 = add nsw i32 %d_i_load_23, %add_ln26_7" [axi_interfaces.c:26]   --->   Operation 167 'add' 'add_ln26_15' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 168 [1/1] (0.00ns)   --->   "%d_o_addr_23 = getelementptr [32 x i32]* %d_o, i64 0, i64 23" [axi_interfaces.c:27]   --->   Operation 168 'getelementptr' 'd_o_addr_23' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 169 [1/1] (1.75ns)   --->   "store i32 %add_ln26_15, i32* %d_o_addr_23, align 4" [axi_interfaces.c:27]   --->   Operation 169 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_25 : Operation 170 [1/1] (0.00ns)   --->   "%d_i_addr_24 = getelementptr [32 x i32]* %d_i, i64 0, i64 24" [axi_interfaces.c:26]   --->   Operation 170 'getelementptr' 'd_i_addr_24' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 171 [2/2] (1.75ns)   --->   "%d_i_load_24 = load i32* %d_i_addr_24, align 4" [axi_interfaces.c:26]   --->   Operation 171 'load' 'd_i_load_24' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 26 <SV = 25> <Delay = 5.40>
+ST_26 : Operation 172 [1/2] (1.75ns)   --->   "%d_i_load_24 = load i32* %d_i_addr_24, align 4" [axi_interfaces.c:26]   --->   Operation 172 'load' 'd_i_load_24' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_26 : Operation 173 [1/1] (1.89ns)   --->   "%add_ln26_16 = add nsw i32 %d_i_load_24, %add_ln26_8" [axi_interfaces.c:26]   --->   Operation 173 'add' 'add_ln26_16' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 174 [1/1] (0.00ns)   --->   "%d_o_addr_24 = getelementptr [32 x i32]* %d_o, i64 0, i64 24" [axi_interfaces.c:27]   --->   Operation 174 'getelementptr' 'd_o_addr_24' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 175 [1/1] (1.75ns)   --->   "store i32 %add_ln26_16, i32* %d_o_addr_24, align 4" [axi_interfaces.c:27]   --->   Operation 175 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_26 : Operation 176 [1/1] (0.00ns)   --->   "%d_i_addr_25 = getelementptr [32 x i32]* %d_i, i64 0, i64 25" [axi_interfaces.c:26]   --->   Operation 176 'getelementptr' 'd_i_addr_25' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 177 [2/2] (1.75ns)   --->   "%d_i_load_25 = load i32* %d_i_addr_25, align 4" [axi_interfaces.c:26]   --->   Operation 177 'load' 'd_i_load_25' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 27 <SV = 26> <Delay = 5.40>
+ST_27 : Operation 178 [1/2] (1.75ns)   --->   "%d_i_load_25 = load i32* %d_i_addr_25, align 4" [axi_interfaces.c:26]   --->   Operation 178 'load' 'd_i_load_25' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_27 : Operation 179 [1/1] (1.89ns)   --->   "%add_ln26_17 = add nsw i32 %d_i_load_25, %add_ln26_9" [axi_interfaces.c:26]   --->   Operation 179 'add' 'add_ln26_17' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 180 [1/1] (0.00ns)   --->   "%d_o_addr_25 = getelementptr [32 x i32]* %d_o, i64 0, i64 25" [axi_interfaces.c:27]   --->   Operation 180 'getelementptr' 'd_o_addr_25' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 181 [1/1] (1.75ns)   --->   "store i32 %add_ln26_17, i32* %d_o_addr_25, align 4" [axi_interfaces.c:27]   --->   Operation 181 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_27 : Operation 182 [1/1] (0.00ns)   --->   "%d_i_addr_26 = getelementptr [32 x i32]* %d_i, i64 0, i64 26" [axi_interfaces.c:26]   --->   Operation 182 'getelementptr' 'd_i_addr_26' <Predicate = true> <Delay = 0.00>
+ST_27 : Operation 183 [2/2] (1.75ns)   --->   "%d_i_load_26 = load i32* %d_i_addr_26, align 4" [axi_interfaces.c:26]   --->   Operation 183 'load' 'd_i_load_26' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 28 <SV = 27> <Delay = 5.40>
+ST_28 : Operation 184 [1/2] (1.75ns)   --->   "%d_i_load_26 = load i32* %d_i_addr_26, align 4" [axi_interfaces.c:26]   --->   Operation 184 'load' 'd_i_load_26' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_28 : Operation 185 [1/1] (1.89ns)   --->   "%add_ln26_18 = add nsw i32 %d_i_load_26, %add_ln26_10" [axi_interfaces.c:26]   --->   Operation 185 'add' 'add_ln26_18' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 186 [1/1] (0.00ns)   --->   "%d_o_addr_26 = getelementptr [32 x i32]* %d_o, i64 0, i64 26" [axi_interfaces.c:27]   --->   Operation 186 'getelementptr' 'd_o_addr_26' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 187 [1/1] (1.75ns)   --->   "store i32 %add_ln26_18, i32* %d_o_addr_26, align 4" [axi_interfaces.c:27]   --->   Operation 187 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_28 : Operation 188 [1/1] (0.00ns)   --->   "%d_i_addr_27 = getelementptr [32 x i32]* %d_i, i64 0, i64 27" [axi_interfaces.c:26]   --->   Operation 188 'getelementptr' 'd_i_addr_27' <Predicate = true> <Delay = 0.00>
+ST_28 : Operation 189 [2/2] (1.75ns)   --->   "%d_i_load_27 = load i32* %d_i_addr_27, align 4" [axi_interfaces.c:26]   --->   Operation 189 'load' 'd_i_load_27' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 29 <SV = 28> <Delay = 5.40>
+ST_29 : Operation 190 [1/2] (1.75ns)   --->   "%d_i_load_27 = load i32* %d_i_addr_27, align 4" [axi_interfaces.c:26]   --->   Operation 190 'load' 'd_i_load_27' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_29 : Operation 191 [1/1] (1.89ns)   --->   "%add_ln26_19 = add nsw i32 %d_i_load_27, %add_ln26_11" [axi_interfaces.c:26]   --->   Operation 191 'add' 'add_ln26_19' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 192 [1/1] (0.00ns)   --->   "%d_o_addr_27 = getelementptr [32 x i32]* %d_o, i64 0, i64 27" [axi_interfaces.c:27]   --->   Operation 192 'getelementptr' 'd_o_addr_27' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 193 [1/1] (1.75ns)   --->   "store i32 %add_ln26_19, i32* %d_o_addr_27, align 4" [axi_interfaces.c:27]   --->   Operation 193 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_29 : Operation 194 [1/1] (0.00ns)   --->   "%d_i_addr_28 = getelementptr [32 x i32]* %d_i, i64 0, i64 28" [axi_interfaces.c:26]   --->   Operation 194 'getelementptr' 'd_i_addr_28' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 195 [2/2] (1.75ns)   --->   "%d_i_load_28 = load i32* %d_i_addr_28, align 4" [axi_interfaces.c:26]   --->   Operation 195 'load' 'd_i_load_28' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 30 <SV = 29> <Delay = 5.40>
+ST_30 : Operation 196 [1/2] (1.75ns)   --->   "%d_i_load_28 = load i32* %d_i_addr_28, align 4" [axi_interfaces.c:26]   --->   Operation 196 'load' 'd_i_load_28' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_30 : Operation 197 [1/1] (1.89ns)   --->   "%add_ln26_20 = add nsw i32 %d_i_load_28, %add_ln26_12" [axi_interfaces.c:26]   --->   Operation 197 'add' 'add_ln26_20' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 198 [1/1] (0.00ns)   --->   "%d_o_addr_28 = getelementptr [32 x i32]* %d_o, i64 0, i64 28" [axi_interfaces.c:27]   --->   Operation 198 'getelementptr' 'd_o_addr_28' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 199 [1/1] (1.75ns)   --->   "store i32 %add_ln26_20, i32* %d_o_addr_28, align 4" [axi_interfaces.c:27]   --->   Operation 199 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_30 : Operation 200 [1/1] (0.00ns)   --->   "%d_i_addr_29 = getelementptr [32 x i32]* %d_i, i64 0, i64 29" [axi_interfaces.c:26]   --->   Operation 200 'getelementptr' 'd_i_addr_29' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 201 [2/2] (1.75ns)   --->   "%d_i_load_29 = load i32* %d_i_addr_29, align 4" [axi_interfaces.c:26]   --->   Operation 201 'load' 'd_i_load_29' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 31 <SV = 30> <Delay = 5.40>
+ST_31 : Operation 202 [1/2] (1.75ns)   --->   "%d_i_load_29 = load i32* %d_i_addr_29, align 4" [axi_interfaces.c:26]   --->   Operation 202 'load' 'd_i_load_29' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_31 : Operation 203 [1/1] (1.89ns)   --->   "%add_ln26_21 = add nsw i32 %d_i_load_29, %add_ln26_13" [axi_interfaces.c:26]   --->   Operation 203 'add' 'add_ln26_21' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 204 [1/1] (0.00ns)   --->   "%d_o_addr_29 = getelementptr [32 x i32]* %d_o, i64 0, i64 29" [axi_interfaces.c:27]   --->   Operation 204 'getelementptr' 'd_o_addr_29' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 205 [1/1] (1.75ns)   --->   "store i32 %add_ln26_21, i32* %d_o_addr_29, align 4" [axi_interfaces.c:27]   --->   Operation 205 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_31 : Operation 206 [1/1] (0.00ns)   --->   "%d_i_addr_30 = getelementptr [32 x i32]* %d_i, i64 0, i64 30" [axi_interfaces.c:26]   --->   Operation 206 'getelementptr' 'd_i_addr_30' <Predicate = true> <Delay = 0.00>
+ST_31 : Operation 207 [2/2] (1.75ns)   --->   "%d_i_load_30 = load i32* %d_i_addr_30, align 4" [axi_interfaces.c:26]   --->   Operation 207 'load' 'd_i_load_30' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 32 <SV = 31> <Delay = 5.40>
+ST_32 : Operation 208 [1/2] (1.75ns)   --->   "%d_i_load_30 = load i32* %d_i_addr_30, align 4" [axi_interfaces.c:26]   --->   Operation 208 'load' 'd_i_load_30' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_32 : Operation 209 [1/1] (1.89ns)   --->   "%add_ln26_22 = add nsw i32 %d_i_load_30, %add_ln26_14" [axi_interfaces.c:26]   --->   Operation 209 'add' 'add_ln26_22' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 210 [1/1] (0.00ns)   --->   "%d_o_addr_30 = getelementptr [32 x i32]* %d_o, i64 0, i64 30" [axi_interfaces.c:27]   --->   Operation 210 'getelementptr' 'd_o_addr_30' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 211 [1/1] (1.75ns)   --->   "store i32 %add_ln26_22, i32* %d_o_addr_30, align 4" [axi_interfaces.c:27]   --->   Operation 211 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_32 : Operation 212 [1/1] (0.00ns)   --->   "%d_i_addr_31 = getelementptr [32 x i32]* %d_i, i64 0, i64 31" [axi_interfaces.c:26]   --->   Operation 212 'getelementptr' 'd_i_addr_31' <Predicate = true> <Delay = 0.00>
+ST_32 : Operation 213 [2/2] (1.75ns)   --->   "%d_i_load_31 = load i32* %d_i_addr_31, align 4" [axi_interfaces.c:26]   --->   Operation 213 'load' 'd_i_load_31' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+
+State 33 <SV = 32> <Delay = 5.40>
+ST_33 : Operation 214 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([32 x i32]* %d_o) nounwind, !map !7"   --->   Operation 214 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 215 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([32 x i32]* %d_i) nounwind, !map !13"   --->   Operation 215 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 216 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([15 x i8]* @axi_interfaces_str) nounwind"   --->   Operation 216 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 217 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([32 x i32]* %d_i, [1 x i8]* @p_str4, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str4, i32 -1, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4, [1 x i8]* @p_str4) nounwind" [axi_interfaces.c:14]   --->   Operation 217 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 218 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([32 x i32]* %d_i, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [axi_interfaces.c:14]   --->   Operation 218 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 219 [1/1] (0.00ns)   --->   "%empty_2 = call i32 (...)* @_ssdm_op_SpecMemCore([32 x i32]* %d_o, [1 x i8]* @p_str3, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str3, i32 -1, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3, [1 x i8]* @p_str3) nounwind" [axi_interfaces.c:14]   --->   Operation 219 'specmemcore' 'empty_2' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 220 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface([32 x i32]* %d_o, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [axi_interfaces.c:14]   --->   Operation 220 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 221 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [axi_interfaces.c:14]   --->   Operation 221 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 222 [1/2] (1.75ns)   --->   "%d_i_load_31 = load i32* %d_i_addr_31, align 4" [axi_interfaces.c:26]   --->   Operation 222 'load' 'd_i_load_31' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_33 : Operation 223 [1/1] (1.89ns)   --->   "%add_ln26_23 = add nsw i32 %d_i_load_31, %add_ln26_15" [axi_interfaces.c:26]   --->   Operation 223 'add' 'add_ln26_23' <Predicate = true> <Delay = 1.89> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.89> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 224 [1/1] (0.00ns)   --->   "%d_o_addr_31 = getelementptr [32 x i32]* %d_o, i64 0, i64 31" [axi_interfaces.c:27]   --->   Operation 224 'getelementptr' 'd_o_addr_31' <Predicate = true> <Delay = 0.00>
+ST_33 : Operation 225 [1/1] (1.75ns)   --->   "store i32 %add_ln26_23, i32* %d_o_addr_31, align 4" [axi_interfaces.c:27]   --->   Operation 225 'store' <Predicate = true> <Delay = 1.75> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 1.75> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 32> <Depth = 32> <RAM>
+ST_33 : Operation 226 [1/1] (0.00ns)   --->   "ret void" [axi_interfaces.c:30]   --->   Operation 226 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.75ns
+The critical path consists of the following:
+	'getelementptr' operation ('d_i_addr', axi_interfaces.c:26) [11]  (0 ns)
+	'load' operation ('d_i_load', axi_interfaces.c:26) on array 'd_i' [12]  (1.75 ns)
+
+ <State 2>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('d_i_load', axi_interfaces.c:26) on array 'd_i' [12]  (1.75 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'd_i_load', axi_interfaces.c:26 on array 'd_o' [14]  (1.75 ns)
+
+ <State 3>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_1', axi_interfaces.c:26) on array 'd_i' [16]  (1.75 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'd_i_load_1', axi_interfaces.c:26 on array 'd_o' [18]  (1.75 ns)
+
+ <State 4>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_2', axi_interfaces.c:26) on array 'd_i' [20]  (1.75 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'd_i_load_2', axi_interfaces.c:26 on array 'd_o' [22]  (1.75 ns)
+
+ <State 5>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_3', axi_interfaces.c:26) on array 'd_i' [24]  (1.75 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'd_i_load_3', axi_interfaces.c:26 on array 'd_o' [26]  (1.75 ns)
+
+ <State 6>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_4', axi_interfaces.c:26) on array 'd_i' [28]  (1.75 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'd_i_load_4', axi_interfaces.c:26 on array 'd_o' [30]  (1.75 ns)
+
+ <State 7>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_5', axi_interfaces.c:26) on array 'd_i' [32]  (1.75 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'd_i_load_5', axi_interfaces.c:26 on array 'd_o' [34]  (1.75 ns)
+
+ <State 8>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_6', axi_interfaces.c:26) on array 'd_i' [36]  (1.75 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'd_i_load_6', axi_interfaces.c:26 on array 'd_o' [38]  (1.75 ns)
+
+ <State 9>: 3.51ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_7', axi_interfaces.c:26) on array 'd_i' [40]  (1.75 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'd_i_load_7', axi_interfaces.c:26 on array 'd_o' [42]  (1.75 ns)
+
+ <State 10>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_8', axi_interfaces.c:26) on array 'd_i' [44]  (1.75 ns)
+	'add' operation ('add_ln26', axi_interfaces.c:26) [45]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26', axi_interfaces.c:26 on array 'd_o' [47]  (1.75 ns)
+
+ <State 11>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_9', axi_interfaces.c:26) on array 'd_i' [49]  (1.75 ns)
+	'add' operation ('add_ln26_1', axi_interfaces.c:26) [50]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_1', axi_interfaces.c:26 on array 'd_o' [52]  (1.75 ns)
+
+ <State 12>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_10', axi_interfaces.c:26) on array 'd_i' [54]  (1.75 ns)
+	'add' operation ('add_ln26_2', axi_interfaces.c:26) [55]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_2', axi_interfaces.c:26 on array 'd_o' [57]  (1.75 ns)
+
+ <State 13>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_11', axi_interfaces.c:26) on array 'd_i' [59]  (1.75 ns)
+	'add' operation ('add_ln26_3', axi_interfaces.c:26) [60]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_3', axi_interfaces.c:26 on array 'd_o' [62]  (1.75 ns)
+
+ <State 14>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_12', axi_interfaces.c:26) on array 'd_i' [64]  (1.75 ns)
+	'add' operation ('add_ln26_4', axi_interfaces.c:26) [65]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_4', axi_interfaces.c:26 on array 'd_o' [67]  (1.75 ns)
+
+ <State 15>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_13', axi_interfaces.c:26) on array 'd_i' [69]  (1.75 ns)
+	'add' operation ('add_ln26_5', axi_interfaces.c:26) [70]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_5', axi_interfaces.c:26 on array 'd_o' [72]  (1.75 ns)
+
+ <State 16>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_14', axi_interfaces.c:26) on array 'd_i' [74]  (1.75 ns)
+	'add' operation ('add_ln26_6', axi_interfaces.c:26) [75]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_6', axi_interfaces.c:26 on array 'd_o' [77]  (1.75 ns)
+
+ <State 17>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_15', axi_interfaces.c:26) on array 'd_i' [79]  (1.75 ns)
+	'add' operation ('add_ln26_7', axi_interfaces.c:26) [80]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_7', axi_interfaces.c:26 on array 'd_o' [82]  (1.75 ns)
+
+ <State 18>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_16', axi_interfaces.c:26) on array 'd_i' [84]  (1.75 ns)
+	'add' operation ('add_ln26_8', axi_interfaces.c:26) [85]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_8', axi_interfaces.c:26 on array 'd_o' [87]  (1.75 ns)
+
+ <State 19>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_17', axi_interfaces.c:26) on array 'd_i' [89]  (1.75 ns)
+	'add' operation ('add_ln26_9', axi_interfaces.c:26) [90]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_9', axi_interfaces.c:26 on array 'd_o' [92]  (1.75 ns)
+
+ <State 20>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_18', axi_interfaces.c:26) on array 'd_i' [94]  (1.75 ns)
+	'add' operation ('add_ln26_10', axi_interfaces.c:26) [95]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_10', axi_interfaces.c:26 on array 'd_o' [97]  (1.75 ns)
+
+ <State 21>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_19', axi_interfaces.c:26) on array 'd_i' [99]  (1.75 ns)
+	'add' operation ('add_ln26_11', axi_interfaces.c:26) [100]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_11', axi_interfaces.c:26 on array 'd_o' [102]  (1.75 ns)
+
+ <State 22>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_20', axi_interfaces.c:26) on array 'd_i' [104]  (1.75 ns)
+	'add' operation ('add_ln26_12', axi_interfaces.c:26) [105]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_12', axi_interfaces.c:26 on array 'd_o' [107]  (1.75 ns)
+
+ <State 23>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_21', axi_interfaces.c:26) on array 'd_i' [109]  (1.75 ns)
+	'add' operation ('add_ln26_13', axi_interfaces.c:26) [110]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_13', axi_interfaces.c:26 on array 'd_o' [112]  (1.75 ns)
+
+ <State 24>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_22', axi_interfaces.c:26) on array 'd_i' [114]  (1.75 ns)
+	'add' operation ('add_ln26_14', axi_interfaces.c:26) [115]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_14', axi_interfaces.c:26 on array 'd_o' [117]  (1.75 ns)
+
+ <State 25>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_23', axi_interfaces.c:26) on array 'd_i' [119]  (1.75 ns)
+	'add' operation ('add_ln26_15', axi_interfaces.c:26) [120]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_15', axi_interfaces.c:26 on array 'd_o' [122]  (1.75 ns)
+
+ <State 26>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_24', axi_interfaces.c:26) on array 'd_i' [124]  (1.75 ns)
+	'add' operation ('add_ln26_16', axi_interfaces.c:26) [125]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_16', axi_interfaces.c:26 on array 'd_o' [127]  (1.75 ns)
+
+ <State 27>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_25', axi_interfaces.c:26) on array 'd_i' [129]  (1.75 ns)
+	'add' operation ('add_ln26_17', axi_interfaces.c:26) [130]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_17', axi_interfaces.c:26 on array 'd_o' [132]  (1.75 ns)
+
+ <State 28>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_26', axi_interfaces.c:26) on array 'd_i' [134]  (1.75 ns)
+	'add' operation ('add_ln26_18', axi_interfaces.c:26) [135]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_18', axi_interfaces.c:26 on array 'd_o' [137]  (1.75 ns)
+
+ <State 29>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_27', axi_interfaces.c:26) on array 'd_i' [139]  (1.75 ns)
+	'add' operation ('add_ln26_19', axi_interfaces.c:26) [140]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_19', axi_interfaces.c:26 on array 'd_o' [142]  (1.75 ns)
+
+ <State 30>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_28', axi_interfaces.c:26) on array 'd_i' [144]  (1.75 ns)
+	'add' operation ('add_ln26_20', axi_interfaces.c:26) [145]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_20', axi_interfaces.c:26 on array 'd_o' [147]  (1.75 ns)
+
+ <State 31>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_29', axi_interfaces.c:26) on array 'd_i' [149]  (1.75 ns)
+	'add' operation ('add_ln26_21', axi_interfaces.c:26) [150]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_21', axi_interfaces.c:26 on array 'd_o' [152]  (1.75 ns)
+
+ <State 32>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_30', axi_interfaces.c:26) on array 'd_i' [154]  (1.75 ns)
+	'add' operation ('add_ln26_22', axi_interfaces.c:26) [155]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_22', axi_interfaces.c:26 on array 'd_o' [157]  (1.75 ns)
+
+ <State 33>: 5.41ns
+The critical path consists of the following:
+	'load' operation ('d_i_load_31', axi_interfaces.c:26) on array 'd_i' [159]  (1.75 ns)
+	'add' operation ('add_ln26_23', axi_interfaces.c:26) [160]  (1.9 ns)
+	'store' operation ('store_ln27', axi_interfaces.c:27) of variable 'add_ln26_23', axi_interfaces.c:26 on array 'd_o' [162]  (1.75 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
